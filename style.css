@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: rgba(130, 125, 125, 0.5);
+    box-sizing: border-box;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+}
+
+.logo img {
+    height: 50px;
+    display: block;
+}
+
+.navi a {
+    font-family: "Yusei Magic", sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.95rem;
+}
+
+.navi a:hover {
+    opacity: 0.7;
+}
+
+.mainvisual img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    object-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.main {
+    position: relative;
+}
+
+.main .title {
+    font-family: "Yusei Magic", sans-serif;
+    font-weight: bold;
+    font-size: clamp(20px, 4vw, 40px);
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 370px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+body {
+    animation: fadeIn 1.2s ease;
+}
+
+.MENU {
+    width: 100%;
+    position: relative;
+}
+
+.menu-title {
+    width: 0;
+    height: 0;
+    margin: 0;
+    font-family: "Yusei Magic", sans-serif;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    align-items: right;
+}
+
+.menu-background {
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    overflow: hidden;
+}
+
+.menu-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    #header .hamburger {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        z-index: 30;
+    }
+    #header .hamburger span {
+        width: 30px;
+        height: 3px;
+        background-color: #ffffff;
+        display: inline-block;
+        position: absolute;
+        left: 10px;
+        transition: all 0.4s;
+    }
+    #header .hamburger span:nth-of-type(1) {
+        top:22px;
+    }
+    #header .hamburger span:nth-of-type(2) {
+        top:31px;
+    }
+    #header .hamburger span:nth-of-type(3) {
+        top:40px;
+    }
+
+    #header .navi {
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(130, 125, 125, 0.7);
+        position: fixed;
+        top: 0;
+        right: -80%;
+        z-index: 20;
+        transition: all 0.6s;
+    }
+
+    #header .navi.active {
+        right: 0;
+    }
+
+    #header .navi .menu {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 0;
+        overflow: auto;
+    }
+
+    #header .navi .menu a {
+        padding: 10px 0;
+        margin-left: 0;
+    }
+
+    #header .hamburger .active span:nth-of-type(1) {
+        top: 30px;
+        transform: rotate(-45deg);
+    }
+
+    #header .hamburger .active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    #header .hamburger .active span:nth-of-type(3) {
+        top: 30px;
+        transform: rotate(45deg);
+    }
+
+    .mainvisual img {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .menu-background {
+        margin: 0;
+        clip-path: polygon(0 40%, 100% 0%, 100% 90%, 0 100%);
+}
+
+}
