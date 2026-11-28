@@ -31,5 +31,21 @@ thumbs.forEach(thumb => {
 })
 
 
+const backBtn = document.getElementById('back-to-select');
+  const selectArea = document.getElementById('select-area');
+
+  window.addEventListener('scroll', () => {
+    // 「どの部分をカスタムする？」の枠のページ上からの位置を取得
+    const targetPosition = selectArea.getBoundingClientRect().top + window.scrollY;
+
+    // 選択枠よりも下にスクロールしたらボタンを表示
+    if (window.scrollY > targetPosition + 100) {
+      backBtn.classList.add('is-show');
+    } else {
+      backBtn.classList.remove('is-show');
+    }
+  });
+
+
 
 
